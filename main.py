@@ -34,6 +34,11 @@ def main():
             if aster.collide(user):
                 print("Game over!")
                 exit()
+            for bullet in shots:
+                if aster.collide(bullet):
+                    bullet.kill()
+                    aster.split()
+                    break
         for item in drawable:
             item.draw(screen)
         pygame.display.flip()
